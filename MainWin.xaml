@@ -1,0 +1,75 @@
+﻿<Window xmlns:Controls="clr-namespace:Vst.Controls"  x:Class="KTPMUD.Views.Main.MainWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KTPMUD.Views.Main"
+        xmlns:uc="clr-namespace:KTPMUD.UserControllDT"
+        mc:Ignorable="d"
+        Title="MainWin" Height="550" Width="981" Closing="MainWin_Closing">
+    <Window.Resources>
+        <Style TargetType="Controls:SideMenuCaption">
+            <Setter Property="Foreground" Value="#FFF" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="FontWeight" Value="Bold" />
+        </Style>
+        <Style TargetType="Controls:SideMenuButton">
+            <Setter Property="Foreground" Value="#FFF" />
+            <Setter Property="FontSize" Value="18" />
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#008CFD" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="Controls:MenuButton">
+            <Setter Property="Foreground" Value="#FFF" />
+            <Setter Property="Background" Value="#008cfd" />
+            <Setter Property="Opacity" Value="0.7" />
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Opacity" Value="1" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label  
+                    Grid.Row="0" 
+                    Content="Quản Lý Chăn Nuôi"
+                    FontSize="24"
+                    FontFamily="Time new Roman"
+                    FontWeight="Bold"
+                    Margin=" 5">
+                </Label>
+                <StackPanel Background="#333" Grid.Row="1" >
+                    <Controls:SideMenuButton Text="Trang chủ" Url="home" />
+                    <Controls:SideMenuButton Text="Cơ sở Chăn Nuôi" Url="CoSoChanNuoi" />
+                    <Controls:SideMenuButton Text="Cơ sở Chế Biến" Url="CoSoCheBien" />
+                    <Controls:SideMenuButton Text="Quản lý tạm giữ tiêu hủy" Url="QuanLyTGTH" />
+                    <Controls:SideMenuButton Text="Sản phẩm xử lý chất thải" Url="CoSoChanNuoi" />
+                    <Controls:SideMenuButton Text="Cơ sở khảo nghiệm " Url="CoSoKhaoNghiemSPXLCT" />
+                    <Controls:SideMenuButton Text="Đại lý bán thuốc" Url="DaiLyBanThuoc" />
+                    <Controls:SideMenuButton Text="Cơ sở giết mổ" Url="CoSoGietMo" />
+                    <Controls:SideMenuButton Text="Khu vực tiêu hủy" Url="KhuVucTieuHuy" />
+                    <Controls:SideMenuButton Text="Quản lý tổ chức và vùng" Url="ToChucvaVung" />
+                    <Controls:SideMenuButton Text="Quản lý động vật" Url="CoSoChanNuoi" />
+                    <Controls:SideMenuButton Text="Quản lý dịch" Url="QuanLyDich" />
+                    <Controls:SideMenuButton Text="Đăng xuất" Url="QuanLyDich" />
+                </StackPanel>
+            </Grid>
+            <Border x:Name="MainContent" Grid.Column="1" Grid.Row="1" />
+        </Grid>
+        
+    </Grid>
+</Window>
